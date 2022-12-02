@@ -33,9 +33,13 @@ body{
 /* 메인 */
 .main {
 	background-color: aqua;
+	min-height: 450px;
 	/* BFC  공부 할것 */
-	height: 50vh;
 	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 30px;
 }
 
 
