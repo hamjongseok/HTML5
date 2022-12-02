@@ -6,9 +6,16 @@
 	
 }
 
+/* 링크 스타일 */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
 
 /* 본문 스타일 */
 body{
+	color: #181818;
 	background: #ccc;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
@@ -30,7 +37,6 @@ body{
 
 /* 로고 */
 .logo {
-	background-color: blue;
 	position: absolute;
 	top: 45px;
 	left:60px;
@@ -38,9 +44,25 @@ body{
 /* 텍스트 링크 모음 */
 .member{
 	background-color: aqua;
+	text-align: right;
+	padding: 4px 0;
 }
 
+.member li {
+	/* background-color: rebeccapurple; */
+	display: inline-block;
+}
 
+.member a {
+	background-color: khaki;
+	padding: 6px 10px;
+	/* 실버를 위한, 영역을 크게하여 잘누르게한다, 모바일일때 버튼이 작아서 잘 안눌리는 경험  */
+	display: inherit;
+}
+
+.divider{
+	margin-right: 4px;
+}
 
 /* 비주얼 */
 .visual{
