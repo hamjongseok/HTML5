@@ -33,15 +33,9 @@ body{
 /* 메인 */
 .main {
 	background-color: aqua;
-	border: 1px solid red;
 	/* BFC  공부 할것 */
 	height: 50vh;
-	display: flow-root; 
-}
-
-.group {
-	margin: 0 15px;
-	float: left;
+	display: flex;
 }
 
 
