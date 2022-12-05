@@ -1,5 +1,7 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(../css/fontello.css);
+
 /* 기본 스타일 */
 * , *::before, *::after{
 	box-sizing: border-box; /*공부해볼것 */
@@ -21,10 +23,44 @@ body{
 
 /* 헤더 */
 .header{
-	background: pink;
+	background: #fff;
 	height: 15vh;
 	padding: 0 30px;
+	border-radius: 0 0 15px 15px;
 }
+
+.member {
+	background-color: pink;
+	display: flex;
+	flex-flow: row nowrap; 
+	/* 강사님은 flex-flow를 같이주는편 코드에서 바로보기 쉽게 */
+	justify-content: flex-end;
+}
+/* 
+.member li:nth-child(n + 2)::before{
+	background-color: saddlebrown;
+	content: ":";
+} */
+
+/* 선택자의 우선순위 규칙에 의해 선택자의 파워가 달라짐 */
+/* 클래스-> 10점, li 1점 ::before 1점 => 12점  */
+/* .member li::before{
+	content: ":";
+	/* css에서 텍스트노드로 처리해서 그려주는 것이 content */
+}
+/* 이렇게하면 a의 형제가 생기는데 첫번째 자식으로생기는것이다. */
+
+/* 클래ㅡ 10점 before 1점 -> 11점으로 위의 것이 된다. */
+/* li.first::before {
+	content: "";
+}
+ */ 
+
+ .member li::before{
+	content: "\e800";
+	font-family: fontello;
+ }
+
 /* 비주얼 */
 .visual{
 	background: gray;
