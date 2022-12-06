@@ -58,7 +58,13 @@ body{
 	padding: 6px 10px;
 	/* 실버를 위한, 영역을 크게하여 잘누르게한다, 모바일일때 버튼이 작아서 잘 안눌리는 경험  */
 	display: inherit;
+	text-transform: uppercase;
 }
+
+.member li:last-child a {
+	padding-right: 0;
+}
+
 
 .divider{
 	margin-right: 4px;
