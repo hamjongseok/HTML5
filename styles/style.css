@@ -1,9 +1,25 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+	background-color: red;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 /* 기본 스타일 */
 * , *::before, *::after{
 	box-sizing: border-box; /*공부해볼것 */
 	
+}
+
+html{
+	font-size: 10px;
 }
 
 /* 링크 스타일 */
@@ -15,8 +31,10 @@ a {
 
 /* 본문 스타일 */
 body{
-	color: #181818;
-	background: #ccc;
+	/* em, rem 단위 사용해보기 */
+	font-size: 1.4rem;
+	color: #212121;
+	background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 60%, #fff 100%);
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
@@ -43,9 +61,13 @@ body{
 }
 /* 텍스트 링크 모음 */
 .member{
-	background-color: aqua;
+	/* background-color: aqua; */
 	text-align: right;
 	padding: 4px 0;
+	/* position: relative;
+	right: -10px; */
+	/* transform 속성으로 10픽셀만큼 이동하기 */
+	transform: translateX(10px);
 }
 
 .member li {
@@ -54,21 +76,52 @@ body{
 }
 
 .member a {
-	background-color: khaki;
+	/* background-color: khaki; */
 	padding: 6px 10px;
 	/* 실버를 위한, 영역을 크게하여 잘누르게한다, 모바일일때 버튼이 작아서 잘 안눌리는 경험  */
 	display: inherit;
 	text-transform: uppercase;
 }
-
+/* 
+ 구조 선택자로 이용한 하나의 방법
 .member li:last-child a {
 	padding-right: 0;
-}
+} */
 
 
 .divider{
 	margin-right: 4px;
 }
+
+
+/* 메인메뉴 */
+.navigation {
+	padding-bottom: 80px;
+}
+
+.menu {
+	border-top: 2px solid #212121;
+	background: orangered linear-gradient( 
+		to bottom,
+	#ef9126 0%,
+	#e85e2c 35%,
+	#e85e2c 70%,
+	#ef9126 100%);
+	display: flow-root;
+	padding-left: 230px;
+}
+
+.menu-item {
+	background: aqua;
+	float: left;
+}
+
+.sub-menu {
+	background-color: pink;
+	position: absolute;
+	display: none;
+}
+
 
 /* 비주얼 */
 .visual{
@@ -112,7 +165,8 @@ body{
 }
 
 .footer{
-	background: #000;
+	background: #ccc 
+	linear-gradient(to bottom, #ccc, 0%, #eee, 35%, #efefef, 70%, #fff 100%);
 }
 
 .footer-inner{
