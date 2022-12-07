@@ -1,5 +1,6 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
@@ -58,6 +59,7 @@ body{
 	position: absolute;
 	top: 45px;
 	left:60px;
+	z-index: 1;
 }
 /* 텍스트 링크 모음 */
 .member{
@@ -110,7 +112,14 @@ body{
 	border-radius: 0 0 5px 5px;
 	padding-left: 230px;
 	height: 47px;
+	position: relative;
 }
+
+/* 1,2,3 메뉴 에대해서 left0을 하기위해  */
+.menu > li:nth-child(-n+3){
+	position: relative;
+}
+
 
 .menu-item {
 	float: left;
@@ -128,11 +137,82 @@ body{
 	text-shadow: 1px 1px 0 #000,-1px -1px 0 #000;
 }
 
+/* is-active 구체성 -> 20점 */
+.is-active .menu-button {
+	color: yellow;
+}
+
+.is-active .sub-menu {
+	display: block;
+	white-space: nowrap;
+}
+
+
+
+.is-active .menu-button::after{
+	content: "";
+	display: block;
+	border-top: 2px solid #212121;
+}
+
 .sub-menu {
 	background-color: pink;
 	position: absolute;
 	display: none;
+	top: 47px;
+	/* 부모를 기준으로 레프트0 탑 값을 맞춤  */
 }
+
+.menu-html, .menu-css, .menu-standards{
+	left: 0;
+} 
+
+.menu-accessibility, .menu-qna, .menu-archive {
+	right: 0;
+}
+
+
+
+.sub-menu li {
+	display: inline-block;
+}
+
+.sub-menu a::before {
+	content: '\e802'; 
+	font-family: 'fontello';
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-menu a:hover::before, .sub-menu a:focus::before{
+	content: "\e801";
+}
+
 
 
 /* 비주얼 */
