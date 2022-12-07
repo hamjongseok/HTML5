@@ -46,12 +46,11 @@ body{
 }
 
 /* 헤더 */
-.header{
-	background: #fff;
-	height: 15vh;
-	padding: 0 30px;
-	border-radius: 0 0 15px 15px;
-	position: relative;
+.header {
+  background: #fff;
+  padding: 0 30px;
+  border-radius: 0 0 15px 15px;
+  position: relative;
 }
 
 /* 로고 */
@@ -98,7 +97,7 @@ body{
 
 /* 메인메뉴 */
 .navigation {
-	padding-bottom: 80px;
+	padding-bottom: 40px;
 }
 
 .menu {
@@ -156,10 +155,10 @@ body{
 }
 
 .sub-menu {
-	background-color: pink;
 	position: absolute;
 	display: none;
 	top: 47px;
+	padding: 4px 0;
 	/* 부모를 기준으로 레프트0 탑 값을 맞춤  */
 }
 
@@ -171,6 +170,10 @@ body{
 	right: 0;
 }
 
+.sub-menu a {
+	display: inline-block;
+	padding: 6px 0;
+}
 
 
 .sub-menu li {
@@ -213,6 +216,10 @@ body{
 	content: "\e801";
 }
 
+.sub-menu a:hover,
+.sub-menu a:focus{
+	color: red;
+}
 
 
 /* 비주얼 */
