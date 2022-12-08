@@ -35,8 +35,12 @@ body{
 	/* em, rem 단위 사용해보기 */
 	font-size: 1.4rem;
 	color: #212121;
-	background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 60%, #fff 100%);
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	background: yellow;
+	background-image: url(./images/bg_flower.png),
+	linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 60%, #fff 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: 50% 0, 0 0;
 }
 
 /* 레이아웃 */
@@ -239,7 +243,6 @@ body{
 }
 
 .visual{
-	background: gray;
 	height: 120px;
 }
 
