@@ -3,20 +3,17 @@
 @import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
-	background-color: red;
+.a11y-hidden, legend{
 	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
+	width: 1;
+	height: 1;
 	overflow: hidden;
 	clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-/* 기본 스타일 */
+/* 박스사이징 설정 */
 * , *::before, *::after{
 	box-sizing: border-box; /*공부해볼것 */
-	
 }
 
 html{
@@ -36,10 +33,9 @@ body{
 	font-size: 1.4rem;
 	color: #212121;
 	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-	background: yellow;
 	background-image: url(./images/bg_flower.png),
 	linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 60%, #fff 100%);
-	background-repeat: no-repeat, repeat;
+	background-repeat: no-repeat;
 	background-position: 50% 0, 0 0;
 }
 
@@ -47,6 +43,7 @@ body{
 .header, .visual, .main , .slogan, .footer-inner{
 	width: 940px;
 	margin: 0 auto;
+	/* 가운데 정렬을 위한 margin */
 }
 
 /* 헤더 */
@@ -64,11 +61,13 @@ body{
 	left:60px;
 	z-index: 1;
 }
-/* 텍스트 링크 모음 */
+
+/* 상단 텍스트 링크 모음 */
 .member{
-	/* background-color: aqua; */
+	
 	text-align: right;
 	padding: 4px 0;
+	/* position 속성으로 활용해서 이동하는 방법 */
 	/* position: relative;
 	right: -10px; */
 	/* transform 속성으로 10픽셀만큼 이동하기 */
@@ -76,24 +75,24 @@ body{
 }
 
 .member li {
-	/* background-color: rebeccapurple; */
 	display: inline-block;
 }
 
 .member a {
-	/* background-color: khaki; */
 	padding: 6px 10px;
 	/* 실버를 위한, 영역을 크게하여 잘누르게한다, 모바일일때 버튼이 작아서 잘 안눌리는 경험  */
 	display: inherit;
 	text-transform: uppercase;
 }
+
 /* 
  구조 선택자로 이용한 하나의 방법
+
 .member li:last-child a {
 	padding-right: 0;
-} */
-
-
+} 
+  */
+	
 .divider{
 	margin-right: 4px;
 }
@@ -159,6 +158,7 @@ body{
 }
 
 .sub-menu {
+	/* background: red; */
 	position: absolute;
 	display: none;
 	top: 47px;
@@ -173,11 +173,11 @@ body{
 .menu-accessibility, .menu-qna, .menu-archive {
 	right: 0;
 }
-
+/* 
 .sub-menu a {
 	display: inline-block;
 	padding: 6px 0;
-}
+} */
 
 
 .sub-menu li {
@@ -292,21 +292,25 @@ body{
 
 /* 메인 */
 .main {
-	background-color: aqua;
+	background-color: #fff;
 	/* BFC  공부 할것 */
-	height: 50vh;
-	display: flow-root; 
+	min-height: 450px;
+	background-color: yellow;
+	/* display: flow-root;  */
+	/* overflow: hidden; */
+	padding: 30px 15px;
+	border-radius: 15px 15px 0 0;
+	/* 15 15 는 상단 좌우 아래 0 0은 각지게처리 */
+	display: flex;
 }
+
 
 .group {
 	margin: 0 15px;
-	float: left;
+	/* float: left; */
 }
 
-
-
 .group1 {
-	background-color: violet;
 	width: 250px;
 }
 .group2 {
@@ -319,10 +323,120 @@ body{
 	width: 190px;
 }
 
+/* 로그인 영역 */
+.login {
+	background: orange radial-gradient(circle at right top, orange, orangered);
+	border-radius: 5px;
+	padding: 10px;
+	/* text-indent: 10px; */
+	box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.login-title {
+	font-size: 15px;
+	color: yellow;
+	font-weight: 700;
+	text-indent: 10px;
+}
+
+.login-form{
+	background-color: #fff;
+	margin-top: 10px;
+	border-radius: 5px 5px 0 0;
+	padding: 10px 10px 0 10px;
+}
+
+.login-form label{
+	display: inline-block;
+	width: 56px;
+}
+
+.login-form input{
+	width: 90px;
+	height: 24px;
+	border: 1px solid #aaa;
+	padding: 1px 1px 1px 5px;
+	border-radius: 3px;
+}
+
+
+
+fieldset {
+	position: relative;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+}
+
+.user-email, .user-pwd{
+	margin-bottom: 5px;
+}
+
+.login-button{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 52px;
+	color: #fff;
+	background-color: orangered;
+	border: 0;
+	padding: 0 8px;
+	border-radius: 5px;
+	font-size: 13px;
+}
+
+.sign {
+	background-color: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 4px 10px;
+	display: flex;
+	justify-content: space-between;
+	flex-flow: row nowrap;
+}
+
+.sign a {
+	display: block;
+	padding: 6px 0;
+	letter-spacing: -1px;
+}
+
+.sign a::before{
+	content: "\e801";
+	font-family: 'fontello';
+	margin-right: 8px;
+}
+
+/* 유효성 검사 배너 */
+.validation-list {
+	margin-top: 25px;
+	background-color: #ef9126;
+}
+
+.validation-list li {
+	margin-top: 10px;
+}
+
+.validation-list a{
+	display: block;
+	background: 	url(./images/validation_icon.png) no-repeat 25px 50%,
+	#ccc linear-gradient(to bottom, #ccc, #eee);
+	padding: 8px 15px 8px 55px;
+	border-radius: 30px;
+	border: 1px solid #aaa;
+}
+
+/* hover할때는 focus도 하는것을 권장ㅌ */
+.validation-list a:hover,
+.validation-list a:focus{
+	color: red;
+}
+
+
+
 /* 슬로건 */
 .slogan{
 	background: green;
 	height: 10vh;
+		border: 3px solid red;
 	clear: both;
 }
 
